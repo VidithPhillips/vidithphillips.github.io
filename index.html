@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidith Phillips - Portfolio</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Add Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="nav-links">
+                    <a href="#experience">Experience</a>
+                    <a href="#research">Research</a>
+                    <a href="#education">Education</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#awards">Awards</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <!-- Add neural network canvas background -->
+                <canvas id="networkCanvas" class="network-bg"></canvas>
+                
+                <!-- Add decorative elements -->
+                <div class="hero-decorations">
+                    <div class="deco-circle"></div>
+                    <div class="deco-line"></div>
+                    <div class="deco-dots"></div>
+                </div>
+
+                <div class="hero-content">
+                    <span class="hero-eyebrow">Bridging Medicine & Technology</span>
+                    <h1>Hey, I'm <span class="highlight">Vidith Phillips</span></h1>
+                    <p class="hero-text">Physician-Scientist & AI Researcher</p>
+                    <div class="hero-description">
+                        <p class="hero-subtext">Leveraging artificial intelligence to transform neurological care and improve patient outcomes</p>
+                        <div class="hero-focus-areas">
+                            <span class="focus-tag"><i class="fas fa-brain"></i> Clinical AI</span>
+                            <span class="focus-tag"><i class="fas fa-heartbeat"></i> Neurology</span>
+                            <span class="focus-tag"><i class="fas fa-eye"></i> Computer Vision</span>
+                            <span class="focus-tag"><i class="fas fa-robot"></i> LLMs in Healthcare</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="experience">
+                <div class="section-header">
+                    <h2>Professional Experience</h2>
+                    <p>My journey in healthcare and technology</p>
+                </div>
+                <div class="experience-timeline">
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <img src="assets/images/logos/ana-logo.png" alt="American Neurological Association Logo" class="institution-logo">
+                            <div class="header-content">
+                                <h3>Executive Member – IDEAS Committee</h3>
+                                <span class="date">Sep 2024 - Present</span>
+                                <span class="company">American Neurological Association</span>
+                            </div>
+                        </div>
+                        <p>Appointed to serve on the IDEAS Committee for the American Neurological Association from September 2024 – 2027. Aimed at improving diversity, equity, and inclusion in Academic Neurology & Neuroscience community at large.</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Director - Biotechnology Industry Relations</h3>
+                            <span class="date">Sep 2024 - Present</span>
+                            <span class="company">Hopkins Biotechnology Network Executive Committee</span>
+                        </div>
+                        <p>Appointed as Director of Industry Relations for the Hopkins Biotechnology Network Executive Committee. Working to improve and maintain industry relations and collaboration in the domain of Biotechnology.</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <img src="assets/images/logos/jhu-logo.jpg" alt="Johns Hopkins Logo" class="institution-logo">
+                            <div class="header-content">
+                                <h3>Research Assistant</h3>
+                                <span class="date">Aug 2023 - Present</span>
+                                <span class="company">Johns Hopkins School of Medicine, Baltimore</span>
+                            </div>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Mathioudakis Lab: Led a collaborative effort to leverage large language models (GPT-4) to enhance clinical decision support for Type 2 Diabetes as per ADA Standards of Care.</li>
+                            <li>Neurology, NVV Division: Developed an open-set object detection framework for Iris Tracking to capture nystagmus patterns in patients with Posterior Circulation Stroke</li>
+                            <li>Oishi Lab, MRI Division: Developed and implemented a deep learning framework to predict neonatal brain injury from T2 MRI scans, enhancing early diagnosis and treatment strategies.</li>
+                            <li>RAIL Lab: Implemented a deep learning segmentation model (Med-SAM) to predict abnormal thyroid nodules from thyroid scans.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Healthcare Artificial Intelligence Strategist</h3>
+                            <span class="date">Dec 2023 - Present</span>
+                            <span class="company">Small-Eyes LLC, Fertility Inc, Youth-Health, Humlife 360</span>
+                        </div>
+                        <p>Advised healthcare startups on AI strategy, defining the roadmap for integrating AI technologies with healthcare services to drive innovation and improve patient outcomes. Developed strategic initiatives for data-driven decision-making, positioning startups to capitalize on AI advancements for enhanced care delivery and operational efficiency.</p>
+                    </div>
+
+                    <!-- Continue with more experience items... -->
+                </div>
+            </section>
+
+            <section id="research" class="research">
+                <div class="section-header">
+                    <h2>Scientific Research Experience</h2>
+                    <p>Research contributions across multiple domains</p>
+                </div>
+
+                <div class="research-controls">
+                    <div class="research-search">
+                        <input type="text" id="publicationSearch" placeholder="Search publications..." class="search-input">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    
+                    <div class="research-sort">
+                        <select id="publicationSort" class="sort-select">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="title">Title (A-Z)</option>
+                            <option value="status">Status</option>
+                        </select>
+                        <i class="fas fa-sort sort-icon"></i>
+                    </div>
+
+                    <div class="publication-counter">
+                        Showing <span id="visibleCount">0</span> of <span id="totalCount">0</span> publications
+                    </div>
+                </div>
+
+                <div class="research-filters">
+                    <div class="filter-group">
+                        <label>Filter by Status:</label>
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="published">Published</button>
+                        <button class="filter-btn" data-filter="manuscript">Manuscript</button>
+                        <button class="filter-btn" data-filter="ongoing">Ongoing</button>
+                        <button class="filter-btn" data-filter="in-review">In Review</button>
+                        <button class="filter-btn" data-filter="accepted">Accepted</button>
+                        <button class="filter-btn" data-filter="developed">Developed</button>
+                        <button class="filter-btn" data-filter="conference">Conference</button>
+                    </div>
+                    <div class="filter-group">
+                        <label>Filter by Domain:</label>
+                        <button class="filter-btn active" data-domain="all">All</button>
+                        <button class="filter-btn" data-domain="biomedical">Biomedical</button>
+                        <button class="filter-btn" data-domain="neurology">Neurology</button>
+                        <button class="filter-btn" data-domain="radiology">Radiology</button>
+                        <button class="filter-btn" data-domain="mhealth">mHealth</button>
+                        <button class="filter-btn" data-domain="endocrinology">Endocrinology</button>
+                    </div>
+                </div>
+
+                <div class="research-domains">
+                    <!-- Biomedical Informatics & Data Science -->
+                    <div class="research-domain">
+                        <h3 class="domain-title">Biomedical Informatics & Data Science</h3>
+                        <div class="publications-grid">
+                            <div class="publication-card" data-status="published" data-domain="biomedical">
+                                <h4>Qualitative Metrics for Evaluating Large Language Models in Clinical Decision-Making</h4>
+                                <p class="pub-role">Role: Literature Review, Secondary Research, Manuscript Writing</p>
+                                <p class="pub-status status-published">
+                                    <span class="status-icon"></span>
+                                    Published in BMC Medical Informatics
+                                </p>
+                                <a href="https://doi.org/10.1186/s12911-024-02757-z" class="pub-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> View Publication
+                                </a>
+                            </div>
+
+                            <div class="publication-card" data-status="manuscript" data-domain="biomedical">
+                                <h4>Analysis of COVID-19 FAIR Datasets</h4>
+                                <p class="pub-role">Role: Medical Literature Review, Manuscript Writing, Data Analysis</p>
+                                <p class="pub-status status-manuscript">
+                                    <span class="status-icon"></span>
+                                    Status: Manuscript
+                                </p>
+                            </div>
+
+                            <div class="publication-card" data-status="developed" data-domain="biomedical">
+                                <h4>Development of an Integrated Federated Learning Healthcare Platform</h4>
+                                <p class="pub-role">Role: Medical Literature Review, Manuscript Writing, Development of T-SNE Plots</p>
+                                <p class="pub-status status-developed">
+                                    <span class="status-icon"></span>
+                                    Status: Platform Developed
+                                </p>
+                                <a href="https://federatedhealthplatform.tavlab.iiitd.edu.in/home" class="pub-link" target="_blank">View Platform</a>
+                            </div>
+
+                            <div class="publication-card" data-status="manuscript" data-domain="biomedical">
+                                <h4>Reinforcement Learning in Public Health: A Scoping Review</h4>
+                                <p class="pub-role">Role: Literature Review, Manuscript Writing</p>
+                                <p class="pub-status status-manuscript">
+                                    <span class="status-icon"></span>
+                                    Status: Manuscript
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Neurology Section -->
+                    <div class="research-domain">
+                        <h3 class="domain-title">Neurology</h3>
+                        <div class="publications-grid">
+                            <div class="publication-card" data-status="ongoing" data-domain="neurology">
+                                <h4>Optimizing smartphone head and eye tracking algorithms for high-precision measurements during HINTS testing</h4>
+                                <p class="pub-role">Role: Protocol Development, Literature Review, Model Development, Statistical Analysis</p>
+                                <p class="pub-status status-ongoing">
+                                    <span class="status-icon"></span>
+                                    Status: Ongoing Research
+                                </p>
+                            </div>
+
+                            <div class="publication-card" data-status="accepted" data-domain="neurology">
+                                <h4>Stroke Prevention in Young Adults of South Asia</h4>
+                                <p class="pub-role">Role: Literature Review, Manuscript Writing</p>
+                                <p class="pub-status status-accepted">
+                                    <span class="status-icon"></span>
+                                    Status: Accepted (AAN: Neurology)
+                                </p>
+                                <a href="https://www.neurology.org/media/blog-post/stroke-prevention-young-adults-south-asia" class="pub-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> View Publication
+                                </a>
+                            </div>
+
+                            <div class="publication-card" data-status="published" data-domain="neurology">
+                                <h4>Assessing the suitability of ChatGPT & Google Gemini for patient education for common neurological conditions</h4>
+                                <p class="pub-role">Role: Literature Review, Data Collection, Statistical Analysis, Manuscript Writing</p>
+                                <p class="pub-status status-published">
+                                    <span class="status-icon"></span>
+                                    Published in Discover Artificial Intelligence
+                                </p>
+                                <a href="https://doi.org/10.1007/s44163-024-00189-2" class="pub-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> View Publication
+                                </a>
+                            </div>
+
+                            <div class="publication-card" data-status="in-review" data-domain="neurology">
+                                <h4>Physical activity levels among patients with a history of Stroke: A retrospective study</h4>
+                                <p class="pub-role">Role: Literature Review, Data Collection, Statistical Analysis, Manuscript Writing</p>
+                                <p class="pub-status status-review">
+                                    <span class="status-icon"></span>
+                                    Status: In-Review (Springer: Discover Medicine)
+                                </p>
+                            </div>
+
+                            <div class="publication-card" data-status="published" data-domain="neurology">
+                                <h4>Smartphones vs Goggles for Video-Oculography: Current Status and Future Direction</h4>
+                                <p class="pub-role">Role: Literature Review, Manuscript Writing</p>
+                                <p class="pub-status status-published">
+                                    <span class="status-icon"></span>
+                                    Published in Research in Vestibular Science
+                                </p>
+                                <a href="https://doi.org/10.21790/rvs.2024.009" class="pub-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> View Publication
+                                </a>
+                            </div>
+
+                            <div class="publication-card" data-status="published" data-domain="neurology">
+                                <h4>Trends in Brain Cancer Incidence and Demographic Variations in the United States</h4>
+                                <p class="pub-role">Role: Literature Review, Data Collection, Statistical Analysis, Manuscript Writing</p>
+                                <p class="pub-status status-published">
+                                    <span class="status-icon"></span>
+                                    Published in Cureus Journal of Medical Science
+                                </p>
+                                <a href="http://dx.doi.org/10.7759/cureus.72805" class="pub-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> View Publication
+                                </a>
+                            </div>
+
+                            <div class="publication-card" data-status="in-review" data-domain="neurology">
+                                <h4>Exploring public interest in Migraine and its treatment measures</h4>
+                                <p class="pub-role">Role: Literature Review, Data Collection, Statistical Analysis, Manuscript Writing</p>
+                                <p class="pub-status status-review">
+                                    <span class="status-icon"></span>
+                                    Status: In-Review
+                                </p>
+                            </div>
+
+                            <div class="publication-card" data-status="in-review" data-domain="neurology">
+                                <h4>From Neurons to Networks: Ethical Dimensions of AI-Infused Neural Interfaces</h4>
+                                <p class="pub-role">Role: Literature Review, Data Collection, Statistical Analysis, Manuscript Writing</p>
+                                <p class="pub-status status-review">
+                                    <span class="status-icon"></span>
+                                    Status: In-Review (Springer – AI & Ethics)
+                                </p>
+                            </div>
+
+                            <div class="publication-card" data-status="in-review" data-domain="neurology">
+                                <h4>Beyond Brainwaves: The Ethical Imperative of AI in Neurological Care</h4>
+                                <p class="pub-role">Role: Literature Review, Data Collection, Statistical Analysis, Manuscript Writing</p>
+                                <p class="pub-status status-review">
+                                    <span class="status-icon"></span>
+                                    Status: In-Review (Nature Reviews Neurology)
+                                </p>
+                            </div>
+
+                            <div class="publication-card" data-status="in-review" data-domain="neurology">
+                                <h4>From Pixels to Prognosis: AI and Computer Vision in Neurological Disease Detection</h4>
+                                <p class="pub-role">Role: Literature Review, Data Collection, Statistical Analysis, Manuscript Writing</p>
+                                <p class="pub-status status-review">
+                                    <span class="status-icon"></span>
+                                    Status: In-Review (Elsevier – AI in Medicine)
+                                </p>
+                            </div>
+
+                            <div class="publication-card" data-status="conference" data-domain="neurology">
+                                <h4>Improving Health Literacy for Cognitive Disabilities: An LLM Approach to Personalized After-Visit Summaries</h4>
+                                <p class="pub-role">Role: Literature Review, Data Collection, Statistical Analysis, Manuscript Writing</p>
+                                <p class="pub-status status-conference">
+                                    <span class="status-icon"></span>
+                                    Status: Conference Abstract (International Neuroethics Society – 2025 Annual Meeting)
+                                </p>
+                            </div>
+
+                            <div class="publication-card" data-status="published" data-domain="neurology">
+                                <h4>Physical activity exercise behavior in individuals with a history of stroke: a retrospective study</h4>
+                                <p class="pub-role">Role: Literature Review, Data Acquisition, Statistical Analysis, Manuscript Writing</p>
+                                <p class="pub-status status-published">
+                                    <span class="status-icon"></span>
+                                    Published in Discover Medicine
+                                </p>
+                                <a href="https://link.springer.com/article/10.1007/s44337-025-00209-9" class="pub-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> View Publication
+                                </a>
+                            </div>
+
+                            <div class="publication-card" data-status="published" data-domain="neurology">
+                                <h4>Exploring Public Interest in Multiple Sclerosis and Its Treatment Measures in the United States: A Google Trends Analysis</h4>
+                                <p class="pub-role">Role: Data Analysis, Literature Review, Manuscript Writing</p>
+                                <p class="pub-status status-published">
+                                    <span class="status-icon"></span>
+                                    Published in Cureus Journal
+                                </p>
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/39734957/" class="pub-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> View Publication
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Radiology Section -->
+                    <div class="research-domain">
+                        <h3 class="domain-title">Radiology</h3>
+                        <div class="publications-grid">
+                            <div class="publication-card" data-status="ongoing" data-domain="radiology">
+                                <h4>Deep Learning-based Prediction of Neonatal Hypoxic Ischemic Encephalopathy Lesion from T2 Haste Images</h4>
+                                <p class="pub-role">Role: Protocol Development, Model Development, Statistical Analysis</p>
+                                <p class="pub-status status-ongoing">
+                                    <span class="status-icon"></span>
+                                    Status: Ongoing Research
+                                </p>
+                            </div>
+
+                            <div class="publication-card" data-status="ongoing" data-domain="radiology">
+                                <h4>Utilization of Med-SAM for Thyroid Nodule Analysis</h4>
+                                <p class="pub-role">Role: Protocol Development, Model Development, Statistical Analysis</p>
+                                <p class="pub-status status-ongoing">
+                                    <span class="status-icon"></span>
+                                    Status: Ongoing Research
+                                </p>
+                            </div>
+
+                            <div class="publication-card" data-status="published" data-domain="radiology">
+                                <h4>Assessing the suitability of ChatGPT and Google Gemini for patient education in common Radiological Investigations</h4>
+                                <p class="pub-role">Role: Literature Review, Data Collection, Statistical Analysis, Manuscript Writing</p>
+                                <p class="pub-status status-published">
+                                    <span class="status-icon"></span>
+                                    Published in Cureus Journal of Medical Science
+                                </p>
+                                <a href="https://doi.org/10.7759/cureus.74876" class="pub-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> View Publication
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Health Section -->
+                    <div class="research-domain">
+                        <h3 class="domain-title">Mobile Health (m-Health)</h3>
+                        <div class="publications-grid">
+                            <div class="publication-card" data-status="developed" data-domain="mhealth">
+                                <h4>Development of an m-Health Application for Maternal Antenatal Risk Assessment</h4>
+                                <p class="pub-role">Role: Front-end Development, Medical Literature Review</p>
+                                <p class="pub-status status-developed">
+                                    <span class="status-icon"></span>
+                                    Status: Application Developed and Deployed
+                                </p>
+                            </div>
+
+                            <div class="publication-card" data-status="developed" data-domain="mhealth">
+                                <h4>Development of an m-Health Application for Public Health Screening of Pulmonary Tuberculosis</h4>
+                                <p class="pub-role">Role: Front-end Development, Medical Literature Review</p>
+                                <p class="pub-status status-developed">
+                                    <span class="status-icon"></span>
+                                    Status: Application Developed and Deployed
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Endocrinology Section -->
+                    <div class="research-domain">
+                        <h3 class="domain-title">Endocrinology</h3>
+                        <div class="publications-grid">
+                            <div class="publication-card" data-status="ongoing" data-domain="endocrinology">
+                                <h4>Advancing Type 2 Diabetes Management: The role of large language models as clinical decision support tools</h4>
+                                <p class="pub-role">Role: Protocol Development, Literature Review, Statistical Analysis, Manuscript Writing</p>
+                                <p class="pub-status status-ongoing">
+                                    <span class="status-icon"></span>
+                                    Status: Ongoing Research
+                                </p>
+                            </div>
+                            
+                            <div class="publication-card" data-status="conference" data-domain="endocrinology">
+                                <h4>Prevalence of Type 2 Diabetes Mellitus amongst Medical Students: A Cross-Sectional Study</h4>
+                                <p class="pub-role">Role: Protocol Development, Literature Review, Statistical Analysis, Manuscript Writing</p>
+                                <p class="pub-status status-conference">
+                                    <span class="status-icon"></span>
+                                    Status: Conference Scientific Paper Presentation (AMSC Thailand 2019)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="education">
+                <div class="section-header">
+                    <h2>Education</h2>
+                    <p>Academic background and achievements</p>
+                </div>
+                <div class="education-grid">
+                    <div class="education-item">
+                        <img src="assets/images/logos/jhu-logo.jpg" alt="Johns Hopkins Logo" class="institution-logo">
+                        <div class="education-content">
+                            <h3>M.S. in Biomedical Informatics & Data Science</h3>
+                            <p class="institution">Johns Hopkins University School of Medicine</p>
+                            <p class="location">Baltimore, USA</p>
+                            <p class="gpa">GPA: 4.0/4.0</p>
+                            <p class="coursework">Relevant Coursework: Clinical Data Analysis (Python), Precision Medicine, Applied Clinical Informatics, Database Querying in Healthcare, Design Discovery, Imaging Informatics & Deep Learning, OMOP and Observational Research.</p>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <img src="assets/images/logos/isb-logo.png" alt="Indian School of Business Logo" class="institution-logo">
+                        <div class="education-content">
+                            <h3>Executive Education in Healthcare Management</h3>
+                            <p class="institution">Indian School of Business</p>
+                            <p class="location">Mohali, India</p>
+                            <p class="gpa">GPA: 4.0/4.0</p>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <img src="assets/images/logos/cmc-logo.jpeg" alt="Christian Medical College Logo" class="institution-logo">
+                        <div class="education-content">
+                            <h3>Bachelor of Medicine and Bachelor of Surgery (M.B.B.S)</h3>
+                            <p class="institution">Christian Medical College & Hospital</p>
+                            <p class="location">Ludhiana, India</p>
+                            <p class="note">U.S - MD Equivalent</p>
+                            <p class="gpa">GPA: 3.7/4.0</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="skills">
+                <div class="section-header">
+                    <h2>Technical Skills</h2>
+                    <p>Technologies and tools I work with</p>
+                </div>
+                <div class="skills-section">
+                    <div class="skills-category">
+                        <h3>Programming & Development</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <i class="fab fa-python skill-icon" title="Python"></i>
+                                <span class="skill-name">Python</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-r-project skill-icon" title="R"></i>
+                                <span class="skill-name">R</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-js skill-icon" title="JavaScript"></i>
+                                <span class="skill-name">JavaScript</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-swift skill-icon" title="Swift"></i>
+                                <span class="skill-name">Swift</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-html5 skill-icon" title="HTML5"></i>
+                                <span class="skill-name">HTML5</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-css3-alt skill-icon" title="CSS3"></i>
+                                <span class="skill-name">CSS3</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-git-alt skill-icon" title="Git"></i>
+                                <span class="skill-name">Git</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Machine Learning & AI</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <i class="fas fa-brain skill-icon"></i>
+                                <span class="skill-name">PyTorch</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-network-wired skill-icon"></i>
+                                <span class="skill-name">TensorFlow</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-robot skill-icon"></i>
+                                <span class="skill-name">Transformers</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-microchip skill-icon"></i>
+                                <span class="skill-name">scikit-learn</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-chart-network skill-icon"></i>
+                                <span class="skill-name">Keras</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Healthcare Informatics</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <i class="fas fa-database skill-icon"></i>
+                                <span class="skill-name">OMOP CDM</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-notes-medical skill-icon"></i>
+                                <span class="skill-name">FHIR/HL7</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-laptop-medical skill-icon"></i>
+                                <span class="skill-name">Epic/Cerner</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-heartbeat skill-icon"></i>
+                                <span class="skill-name">SNOMED-CT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Data Science & Analytics</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <i class="fas fa-table skill-icon"></i>
+                                <span class="skill-name">Pandas/NumPy</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-database skill-icon"></i>
+                                <span class="skill-name">SQL/PostgreSQL</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-chart-bar skill-icon"></i>
+                                <span class="skill-name">Matplotlib/Seaborn</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-project-diagram skill-icon"></i>
+                                <span class="skill-name">Apache Spark</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="awards" class="awards">
+                <div class="section-header">
+                    <h2>Awards & Recognition</h2>
+                    <p>Achievements and honors</p>
+                </div>
+                <div class="awards-grid">
+                    <div class="award-item">Stanford Data Ocean Scholarship</div>
+                    <div class="award-item">Health-Tech and Innovation Fellowship</div>
+                    <div class="award-item">Bite Labs UK</div>
+                    <div class="award-item">NPLB Biotechnology Fellowship</div>
+                    <div class="award-item">Bertelsmann Next Generation Tech Booster Scholarship</div>
+                    <div class="award-item">American Diabetes Association Scholar 2024</div>
+                    <div class="award-item">Oxford Machine Learning Summer Scholar</div>
+                    <div class="award-item">Hexcite 2024 [Johns Hopkins Technology Ventures] 1st Place</div>
+                </div>
+            </section>
+
+            <section id="contact" class="contact">
+                <div class="section-header">
+                    <h2>Contact</h2>
+                    <p>Get in touch</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+                            <p>Baltimore, US, 21218</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3><i class="fas fa-envelope"></i> Email</h3>
+                            <a href="mailto:vphilli5@jh.edu">vphilli5@jh.edu</a>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Phone</h3>
+                            <a href="tel:909662932">909 662-932</a>
+                        </div>
+                    </div>
+                    <div class="social-profiles">
+                        <h3>Profiles</h3>
+                        <div class="profile-links">
+                            <a href="https://scholar.google.com" target="_blank" class="social-link">Google Scholar</a>
+                            <a href="https://www.linkedin.com" target="_blank" class="social-link">LinkedIn</a>
+                            <a href="https://www.researchgate.net" target="_blank" class="social-link">ResearchGate</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
